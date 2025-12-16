@@ -100,8 +100,7 @@ export default function Resume() {
             Why hire me?
           </h2>
           <p className="text-gray-400 mt-6 mb-10">
-            A concise overview of my academic background, professional experience,
-            and technical skill set focused on building reliable and scalable software.
+            I’m motivated, disciplined, and deeply invested in the work I do. I learn quickly, adapt easily, and focus on building software that teams can rely on. My goals align with growth, impact, and long term contribution.
           </p>
 
           <div className="flex flex-col gap-5">
@@ -228,7 +227,7 @@ export default function Resume() {
                 <span className="text-[color:var(--primary-color)] font-semibold">
                   Shreyansh Patel
                 </span>
-                , a software engineer driven by systems thinking and intelligent
+                , A software engineer driven by systems thinking and intelligent
                 automation. I enjoy turning complex ideas into scalable, reliable
                 systems with real-world impact.
               </p>
@@ -262,4 +261,5 @@ export default function Resume() {
     </section>
   );
 }
+
 
