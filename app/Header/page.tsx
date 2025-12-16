@@ -1,5 +1,6 @@
 "use client";
 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/public/Hero.png";
@@ -72,25 +73,28 @@ export default function Header() {
               Download Resume
             </Link>
 
-            <div className="flex gap-6 text-lg">
-              <Link
-                href="https://github.com/Shrey9-alt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[var(--primary-color)] transition"
-              >
-                GitHub
-              </Link>
+           <div className="flex gap-6 items-center">
+  <Link
+    href="https://github.com/Shrey9-alt"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    className="text-2xl text-gray-400 hover:text-[var(--primary-color)] transition"
+  >
+    <FaGithub />
+  </Link>
 
-              <Link
-                href="https://www.linkedin.com/in/shreyanshpatel09/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[var(--primary-color)] transition"
-              >
-                LinkedIn
-              </Link>
-            </div>
+  <Link
+    href="https://www.linkedin.com/in/shreyanshpatel09/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="text-2xl text-gray-400 hover:text-[var(--primary-color)] transition"
+  >
+    <FaLinkedin />
+  </Link>
+</div>
+
           </div>
         </div>
 
@@ -135,3 +139,4 @@ export default function Header() {
     </header>
   );
 }
+
