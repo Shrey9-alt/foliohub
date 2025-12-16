@@ -35,7 +35,7 @@ export default function Resume() {
   // Experience
   const experiences = [
     {
-      date: "Aug 2025 – Present",
+      date: "Fall 2025",
       role: "Graduate Teaching Assistant",
       company: "Cleveland State University",
     },
@@ -52,18 +52,20 @@ export default function Resume() {
   ];
 
   // Education
-  const educations = [
-    {
-      year: "2024 – 2025",
-      degree: "M.S. in Computer Science (GPA: 3.91/4.0)",
-      institute: "Cleveland State University",
-    },
-    {
-      year: "Jun 2022",
-      degree: "B.E. in Computer Engineering",
-      institute: "Gujarat Technical University",
-    },
-  ];
+ const educations = [
+  {
+    year: "2024 – 2025",
+    degree: "M.S. in Computer Science",
+    gpa: "3.91 / 4.0",
+    institute: "Cleveland State University",
+  },
+  {
+    year: "Jun 2022",
+    degree: "B.E. in Computer Engineering",
+    institute: "Gujarat Technical University",
+  },
+];
+
 
   // Skills
   const skills = [
@@ -175,6 +177,12 @@ export default function Resume() {
                     <h4 className="text-3xl font-normal font-unbounded mb-1">
                       {edu.degree}
                     </h4>
+                    {edu.gpa && (
+                    <p className="text-gray-300 text-sm mt-1">
+                   GPA: <span className="font-semibold">{edu.gpa}</span>
+                   </p>
+                    )}
+
                     <p className="text-gray-400 flex items-center text-sm mt-2">
                       <span className="text-[color:var(--primary-color)] text-2xl pe-2">
                         •
@@ -254,3 +262,4 @@ export default function Resume() {
     </section>
   );
 }
+
