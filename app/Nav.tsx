@@ -16,45 +16,37 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="w-full z-[99999] transition-all duration-300">
-      <div className="flex justify-between items-center px-[8%] lg:px-[16%] py-6">
+    <nav className="w-full z-[99999] sticky top-0 bg-transparent">
+      <div className="flex justify-between items-center px-[6%] lg:px-[16%] py-4 lg:py-6">
 
         {/* Logo */}
         <Link
           href="/"
-          className="text-5xl font-bold font-unbounded text-white logo"
+          className="text-3xl lg:text-5xl font-bold font-unbounded text-white"
         >
           Folio
-          <span className="text-[var(--primary-color)] font-unbounded">
-            Hub.
-          </span>
+          <span className="text-[var(--primary-color)]">Hub.</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="flex items-center gap-3">
-          <div className="hidden lg:flex nav-menu items-center space-x-5">
+        <div className="hidden lg:flex items-center gap-4">
+          <div className="flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-base font-bold transition-all text-white relative px-2 py-2 rounded hover:text-[--primary-color]
-                  ${
-                    pathname === link.href
-                      ? 'active-links text-[--primary-color]'
-                      : ''
-                  }`}
+                className={`text-base font-semibold transition text-white hover:text-[var(--primary-color)]
+                  ${pathname === link.href ? 'text-[var(--primary-color)]' : ''}`}
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
-          {/* CTA */}
           <Link
             href="/Contact"
-            className="bg-[var(--primary-color)] px-5 py-2 text-xl text-white font-semibold cursor-pointer rounded-full
-            transition-all duration-300 hover:bg-transparent shadow-md
-            hover:shadow-[0px_2px_5px_var(--primary-color)]"
+            className="bg-[var(--primary-color)] px-6 py-2 text-lg text-white font-semibold rounded-full
+            transition hover:bg-transparent border border-[var(--primary-color)]"
           >
             Hire Me
           </Link>
@@ -62,32 +54,44 @@ export default function Nav() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-2xl"
+          className="lg:hidden text-3xl text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
         >
-          <i className="ri-menu-2-fill text-white"></i>
+          <i className="ri-menu-2-fill"></i>
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-[#1c1b21] text-white border-y border-[--primary-color]
-        px-[8%] overflow-hidden transition-all duration-500 ease-in-out
-        ${isMenuOpen ? 'max-h-96 py-5 opacity-100' : 'max-h-0 py-0 opacity-0'}`}
+        className={`lg:hidden bg-[#1c1b21] text-white border-t border-[var(--primary-color)]
+        transition-all duration-300 overflow-hidden
+        ${isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <ul className="space-y-4 menu">
+        <ul className="flex flex-col gap-6 px-[6%] py-6 text-lg font-medium">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
                 href={link.href}
-                className="block text-base relative"
                 onClick={() => setIsMenuOpen(false)}
+                className={`block transition hover:text-[var(--primary-color)]
+                  ${pathname === link.href ? 'text-[var(--primary-color)]' : ''}`}
               >
                 {link.name}
               </Link>
             </li>
           ))}
+
+          {/* Mobile CTA */}
+          <li className="pt-2">
+            <Link
+              href="/Contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-block bg-[var(--primary-color)] px-6 py-3 rounded-full text-white font-semibold"
+            >
+              Hire Me
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
